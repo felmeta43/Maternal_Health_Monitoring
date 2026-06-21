@@ -1,0 +1,24 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: mhm
+      POSTGRES_PASSWORD: mhm
+      POSTGRES_DB: maternal_health
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  api:
+    build: .
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql+psycopg2://mhm:mhm@db:5432/maternal_health
+      JWT_SECRET_KEY: change-me-in-production
+    ports:
+      - "8000:8000"
+
+volumes:
+  pgdata:

@@ -1,0 +1,25 @@
+name: maternal_health_monitoring
+description: Mobile companion app for the IoT maternal health wearable — BLE pairing, offline-first caching, and sync to the cloud backend.
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ">=3.3.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_blue_plus: ^1.32.12
+  sqflite: ^2.3.3
+  path: ^1.9.0
+  http: ^1.2.2
+  provider: ^6.1.2
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
